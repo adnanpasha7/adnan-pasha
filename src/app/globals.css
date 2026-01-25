@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables */
+:root {
+  --bg: #f7f6f3;
+  --text: #111111;
+  --muted: #555555;
+  --accent: #ffb703;
+  --border: #e5e5e5;
+  --danger: #e63946;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: var(--font-inter);
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-dm-serif);
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--accent);
+  color: #111;
+}
