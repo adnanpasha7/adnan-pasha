@@ -1,21 +1,22 @@
 import "./globals.css";
-import { Inter, DM_Serif_Display, Space_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Space_Mono, Anton } from "next/font/google";
+import Header from "@/components/Header";
 
-const inter = Inter({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const dmSerif = DM_Serif_Display({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-dm-serif",
+  variable: "--font-main",
 });
 
 const spaceMono = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--font-space-mono",
+  variable: "--font-mono",
+});
+
+const anton = Anton({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-anton",
 });
 
 export default function RootLayout({
@@ -25,10 +26,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${dmSerif.variable} ${spaceMono.variable}`}
-      >
-        {children}
+      <body className={`${bricolage.variable} ${spaceMono.variable} ${anton.variable}`}>
+        <Header />
+        <main className="flex-1 max-w-4xl mx-auto px-6 py-12">
+          {children}
+        </main>
       </body>
     </html>
   );
