@@ -1,11 +1,12 @@
 export default function WhatIDo() {
     return (
         <section className="max-w-6xl mx-auto mt-12 px-6">
-            <h3 className="font-anton text-2xl md:text-4xl mb-8">
+            <h3 className="font-anton text-4xl md:text-5xl mb-8 text-transparent
+                     [-webkit-text-stroke:2px_var(--text)]">
                 RIGHT NOW, I’M INTERESTED IN:
             </h3>
 
-            <div className="font-anton text-3xl md:text-5xl leading-tight">
+            <div className="font-anton text-3xl md:text-4xl leading-tight">
                 <div>BUILDING THINGS THAT FEEL ALIVE.</div>
                 <div>DESIGNING WITH FEELING, NOT CHECKLISTS.</div>
                 <div>WRITING IN PUBLIC, EVEN WHEN IT’S MESSY.</div>

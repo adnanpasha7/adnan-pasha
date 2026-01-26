@@ -26,8 +26,8 @@ const entries = [
 export default function JournalLoud() {
   return (
     <section className="max-w-6xl mx-auto mt-12 px-6">
-      <h3 className="font-anton text-3xl md:text-4xl mb-12">
-        SOME THINGS I’VE WRITTEN
+      <h3 className="font-anton text-4xl md:text-5xl mb-12">
+        SOME THINGS I&apos;VE WRITTEN:
       </h3>
 
       <ul className="space-y-10">
@@ -35,14 +35,24 @@ export default function JournalLoud() {
           <li key={index}>
             <Link
               href={entry.href}
-              className="block font-anton text-4xl md:text-6xl leading-tight
-                         hover:underline underline-offset-8 transition"
+              className="block font-anton text-muted text-3xl md:text-4xl leading-tight
+                         hover:scale-105 hover:text-transparent hover:[-webkit-text-stroke:2px_var(--text)] transition-transform duration-700"
             >
               {entry.title}
             </Link>
           </li>
         ))}
       </ul>
+      <span className="mt-8 block">
+        <Link
+          href="/journal"
+          className="font-anton text-lg md:text-xl
+                   hover:underline underline-offset-8 transition"
+        >
+          VIEW ALL WRITING →
+        </Link>
+      </span>
+      <div className="mt-10 h-1 w-full bg-text" />
     </section>
   );
 }

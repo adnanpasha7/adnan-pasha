@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NavStrip() {
   return (
-    <nav className="font-anton max-w-6xl mx-auto px-6 mt-0 md:mt-16">
+    <nav className="font-anton max-w-6xl mx-auto px-6 mt-0 md:mt-12">
       <div className="grid grid-cols-[1fr_auto_1fr] gap-8 items-center">
 
         {/* LEFT — intro text */}

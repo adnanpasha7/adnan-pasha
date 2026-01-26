@@ -20,7 +20,6 @@ body {
   background-color: var(--bg);
   font-family: var(--font-main);
   -webkit-font-smoothing: antialiased;
-  height: 10000px;
 }
 
 .font-anton {

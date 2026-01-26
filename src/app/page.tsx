@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import JournalLoud from "@/components/journal/JournalLoud";
-import ViewAllWriting from "@/components/journal/ViewAllWritings";
 import LoudIntro from "@/components/LoudIntro";
 import NavStrip from "@/components/NavStrip";
 import WhatIDo from "@/components/WhatIDo";
@@ -14,7 +13,6 @@ export default function Home() {
         <LoudIntro />
         <WhatIDo />
         <JournalLoud />
-        <ViewAllWriting />
       </main>
     </>
   );
