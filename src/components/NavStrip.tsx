@@ -2,50 +2,57 @@ import Link from "next/link";
 
 export default function NavStrip() {
   return (
-    <nav className="font-anton max-w-6xl mx-auto px-6">
-      {/* Loud intro line */}
-      <p className="text-lg md:text-xl tracking-wide mb-6">
-        click around. this is basically my head on the internet.
-      </p>
+    <nav className="font-anton max-w-6xl mx-auto px-6 mt-0 md:mt-16">
+      <div className="grid grid-cols-[1fr_auto_1fr] gap-8 items-center">
 
-      {/* Links */}
-      <ul className="flex flex-wrap gap-x-10 gap-y-4 text-xl md:text-2xl font-anton">
-        <li>
+        {/* LEFT — intro text */}
+        <p className="text-lg md:text-5xl  tracking-wide max-w-md">
+          click around. this is basically my head on the internet.
+        </p>
+
+        {/* VERTICAL DIVIDER */}
+        <div className="w-1 bg-text self-stretch" />
+
+        {/* RIGHT — links */}
+        <div className="flex flex-col gap-8 items-start">
+          
+          {/* JOURNAL */}
           <Link
             href="/journal"
-            className="hover:underline underline-offset-8 transition"
+            className="text-2xl md:text-4xl hover:underline underline-offset-8"
           >
-            JOURNAL
+            JOURNAL →
           </Link>
-        </li>
-        <li>
+
+          {/* MOMENTS */}
           <Link
             href="/moments"
-            className="hover:underline underline-offset-8 transition"
+            className="border-2 border-text px-2 md:px-4 py-2 text-lg md:text-2xl hover:bg-text hover:text-bg transition"
           >
-            MOMENTS
+            MOMENTS ◻
           </Link>
-        </li>
-        <li>
+
+          {/* BUILDING */}
           <Link
             href="/building"
-            className="hover:underline underline-offset-8 transition"
+            className="italic text-2xl md:text-3xl hover:-rotate-1 transition"
           >
-            BUILDING
+            BUILDING *
           </Link>
-        </li>
-        <li>
+
+          {/* ABOUT */}
           <Link
             href="/about"
-            className="hover:underline underline-offset-8 transition"
+            className="text-xl tracking-wide underline underline-offset-4"
           >
-            ABOUT
+            ABOUT _
           </Link>
-        </li>
-      </ul>
 
-      {/* Brutal divider */}
-      <div className="mt-10 h-1 w-full bg-text" />
+        </div>
+      </div>
+
+      {/* HORIZONTAL BRUTAL DIVIDER */}
+      <div className="mt-12 h-1 w-full bg-text" />
     </nav>
   );
 }
