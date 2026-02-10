@@ -1,3 +1,4 @@
+import getJournal from "@/lib/journal";
 import Link from "next/link";
 
 const entries = [
@@ -23,7 +24,8 @@ const entries = [
   },
 ];
 
-export default function JournalLoud() {
+export default async function JournalLoud() {
+  const journals = await getJournal();
   return (
     <section className="max-w-6xl mx-auto mt-12 px-6">
       <h3 className="font-anton text-4xl md:text-5xl mb-12">
@@ -31,14 +33,14 @@ export default function JournalLoud() {
       </h3>
 
       <ul className="space-y-10">
-        {entries.map((entry, index) => (
+        {journals.map((journal, index) => (
           <li key={index}>
             <Link
-              href={entry.href}
+              href={journal.href}
               className="block font-anton text-muted text-3xl md:text-4xl leading-tight
-                         hover:scale-105 hover:text-transparent hover:[-webkit-text-stroke:2px_var(--text)] transition-transform duration-700"
+                          hover:text-transparent hover:[-webkit-text-stroke:2px_var(--text)] transition-transform duration-700"
             >
-              {entry.title}
+              {journal.title}
             </Link>
           </li>
         ))}

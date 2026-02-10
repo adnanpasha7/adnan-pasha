@@ -1,3 +1,5 @@
+import { fetchContent } from "@/prismic/prismicClient";
+
 export const journals = [
   {
     slug: "redesigning-again",
@@ -46,3 +48,33 @@ I’ll take honesty.
     `,
   },
 ];
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+const getJournal = async () => {
+    const journalAll = await fetchContent("journal");
+    console.log("journalAll -> ", journalAll);
+    const journals = journalAll.map((journal) => {
+      const fullContent = journal.data.content
+      .map((block) => block.text)
+      .join("\n\n")
+        return {
+            slug: journal.uid,
+            title: journal.data.title[0].text,
+            date: formatDate(journal.data.published_date),
+            content: fullContent,
+            href: `/journal/${journal.uid}`,
+        }
+    });
+    return journals;
+    
+};
+
+export default getJournal;

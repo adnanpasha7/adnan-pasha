@@ -1,10 +1,20 @@
 import Link from "next/link";
-import { journals } from "@/lib/journal";
+import getJournal from "@/lib/journal";
 
-export default function JournalIndex() {
+export default async function JournalIndex() {
+  const journals = await getJournal();
   return (
-    <main className="max-w-6xl mx-auto px-6 py-24">
-      <h1 className="font-anton text-5xl md:text-7xl mb-16">
+    <main className="max-w-6xl mx-auto px-6 py-20">
+      <div className="mb-12 font-anton text-sm md:text-base">
+        <Link
+          href="/"
+          className="hover:underline underline-offset-8 transition"
+        >
+          ← HOME
+        </Link>
+      </div>
+      <h1 className="font-anton text-5xl md:text-7xl mb-16 text-transparent
+                     [-webkit-text-stroke:2px_var(--text)] leading-tight">
         ALL WRITING
       </h1>
 

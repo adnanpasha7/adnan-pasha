@@ -6,6 +6,8 @@ import confetti from "canvas-confetti";
 
 import IntroContent from "@/components/IntroContent";
 
+import { fetchContent } from "@/prismic/prismicClient";
+
 function useIsDesktop() {
     const [isDesktop, setIsDesktop] = useState(false);
 
@@ -39,6 +41,10 @@ export default function Header() {
             return !prev;
         });
     };
+
+    useEffect(() => {
+        fetchContent("journal");
+    }, []);
 
     return (
         <header className={`md:pt-12 md:pb-12 ${open && isDesktop ? "bg-[#ff3800]" : ""}`}>

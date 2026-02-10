@@ -35,3 +35,27 @@ p {
   background-color: var(--accent);
   color: #111;
 }
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f2ea;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #111111;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0ea5e9; /* sky-500 */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #111111 #f9f2ea;
+}
