@@ -19,7 +19,7 @@ export default async function JournalPage({
   const next = journals[index + 1];
 
   return (
-    <main className="max-w-3xl mx-auto px-6 py-20">
+    <main className="max-w-3xl mx-auto px-6 py-20 text-text">
       <div className="mb-12 font-anton text-sm md:text-base">
         <Link
           href="/"

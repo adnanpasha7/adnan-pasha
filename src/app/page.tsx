@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import JournalLoud from "@/components/journal/JournalLoud";
 import LoudIntro from "@/components/LoudIntro";
 import NavStrip from "@/components/NavStrip";
+import ThemeToggle from "@/components/ThemeToggle";
 import WhatIDo from "@/components/WhatIDo";
 import getJournal from "@/lib/journal";
 
@@ -21,7 +22,6 @@ export default async function Home() {
         <JournalLoud />
         <Elsewhere />
       </main>
-      <Footer />
     </>
   );
 }

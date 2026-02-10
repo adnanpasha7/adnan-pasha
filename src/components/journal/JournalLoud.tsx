@@ -27,7 +27,7 @@ const entries = [
 export default async function JournalLoud() {
   const journals = await getJournal();
   return (
-    <section className="max-w-6xl mx-auto mt-12 px-6">
+    <section className="max-w-6xl mx-auto mt-12 px-6 text-text">
       <h3 className="font-anton text-4xl md:text-5xl mb-12">
         SOME THINGS I&apos;VE WRITTEN:
       </h3>

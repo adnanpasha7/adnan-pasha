@@ -6,7 +6,7 @@ export default function WhatIDo() {
                 RIGHT NOW, I’M INTERESTED IN:
             </h3>
 
-            <div className="font-anton text-3xl md:text-4xl leading-tight">
+            <div className="font-anton text-3xl md:text-4xl leading-tight text-text">
                 <div>BUILDING THINGS THAT FEEL ALIVE.</div>
                 <div>DESIGNING WITH FEELING, NOT CHECKLISTS.</div>
                 <div>WRITING IN PUBLIC, EVEN WHEN IT’S MESSY.</div>

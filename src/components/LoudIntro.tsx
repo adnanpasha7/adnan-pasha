@@ -3,7 +3,7 @@ export default function LoudIntro() {
     <section className="max-w-6xl mx-auto mt-12 px-6">
       <div className="flex justify-end">
         <div className="text-right">
-          <h2 className="font-anton leading-tight">
+          <h2 className="font-anton text-text leading-tight">
             <div className="text-3xl md:text-4xl">
               I BUILD.
             </div>

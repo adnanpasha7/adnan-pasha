@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Elsewhere() {
   return (
-    <section className="max-w-6xl mx-auto mt-12 px-6">
+    <section className="max-w-6xl mx-auto mt-12 px-6 text-text">
       
       {/* STATEMENT */}
       <h3 className="font-anton text-5xl md:text-6xl leading-tight">

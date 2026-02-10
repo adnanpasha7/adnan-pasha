@@ -5,13 +5,13 @@ export default function NavStrip() {
     <nav className="font-anton max-w-6xl mx-auto px-6 mt-0 md:mt-12">
       <div className="grid grid-cols-[1fr_auto_1fr] gap-8 items-center">
 
-        <p className="text-lg md:text-5xl  tracking-wide max-w-md">
+        <p className="text-lg text-text md:text-5xl tracking-wide max-w-md">
           click around. this is basically my head on the internet.
         </p>
 
         <div className="w-1 bg-text self-stretch" />
 
-        <div className="flex flex-col gap-8 items-start">          
+        <div className="flex flex-col gap-8 items-start text-text">          
           <Link
             href="/journal"
             className="text-2xl md:text-4xl hover:underline underline-offset-8"

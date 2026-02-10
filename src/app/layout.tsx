@@ -1,5 +1,7 @@
+import Footer from "@/components/Footer";
 import "./globals.css";
 import { Bricolage_Grotesque, Space_Mono, Anton } from "next/font/google";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -26,7 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${bricolage.variable} ${spaceMono.variable} ${anton.variable}`}>
-          {children}
+        {children}
+        <Footer />
+        <ThemeToggle />
       </body>
     </html>
   );

@@ -8,7 +8,7 @@ export default function BrutalHeading({ top, bottom }: BrutalHeadingProps) {
         <div className="leading-none">
             {/* TOP LINE (solid) */}
             <div className="relative inline-block whitespace-nowrap">
-                <span className="font-extrabold text-text">
+                <span className="font-extrabold text-black-text">
                     {top}
                 </span>
             </div>
@@ -17,7 +17,7 @@ export default function BrutalHeading({ top, bottom }: BrutalHeadingProps) {
             <div className="relative inline-block whitespace-nowrap mt-2">
                 {/* Solid left */}
                 <span
-                    className="absolute top-0 left-0 font-extrabold text-text overflow-hidden"
+                    className="absolute top-0 left-0 font-extrabold text-black-text overflow-hidden"
                     style={{ clipPath: "inset(0 50% 0 0)" }}
                 >
                     {bottom}
@@ -26,7 +26,7 @@ export default function BrutalHeading({ top, bottom }: BrutalHeadingProps) {
                 {/* Outline right */}
                 <span
                     className="font-extrabold text-transparent
-                     [-webkit-text-stroke:2px_var(--text)]"
+                     [-webkit-text-stroke:2px_var(--black-text)] overflow-hidden"
                     style={{ clipPath: "inset(0 0 0 50%)" }}
                 >
                     {bottom}

@@ -10,6 +10,22 @@
   --accent: #ffb703;
   --border: #e5e5e5;
   --danger: #e63946;
+  --black-text: #111111;
+
+  --scroll-track: #f9f2ea;
+  --scroll-thumb: #111111;
+  --scroll-thumb-hover: #0ea5e9;
+}
+
+.dark {
+  --bg: #0f0f0f;
+  --text: #f5f5f5;
+  --muted: #aaaaaa;
+  --border: #2a2a2a;
+
+  --scroll-track: #121212;
+  --scroll-thumb: #f5f5f5;
+  --scroll-thumb-hover: #38bdf8;
 }
 
 html {
@@ -42,20 +58,20 @@ p {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f9f2ea;
+  background: var(--scroll-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #111111;
+  background-color: var(--scroll-thumb);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #0ea5e9; /* sky-500 */
+  background-color: var(--scroll-thumb-hover);
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #111111 #f9f2ea;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
 }
