@@ -4,7 +4,7 @@ import getJournal from "@/lib/journal";
 export default async function JournalIndex() {
   const journals = await getJournal();
   return (
-    <main className="max-w-6xl mx-auto px-6 py-20">
+    <main className="max-w-6xl mx-auto px-6 py-20 text-text">
       <div className="mb-12 font-anton text-sm md:text-base">
         <Link
           href="/"
