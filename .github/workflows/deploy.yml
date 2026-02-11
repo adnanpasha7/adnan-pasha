@@ -1,4 +1,4 @@
-name: Deploy Adnan's Website
+name: Deploy to Hostinger (SFTP)
 
 on:
   push:
@@ -6,12 +6,17 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
 
       - name: Install dependencies
         run: npm install
@@ -19,12 +24,12 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Hostinger (Main Domain)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-
+      - name: Deploy via SFTP
+        uses: Dylan700/sftp-upload-action@latest
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out/
-          server-dir: /public_html/
+          port: 22
+          local_path: ./out/*
+          remote_path: /public_html/
