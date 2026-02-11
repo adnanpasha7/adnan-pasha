@@ -2,16 +2,24 @@ import Link from "next/link";
 import getJournal from "@/lib/journal";
 import { notFound } from "next/navigation";
 
+export async function generateStaticParams() {
+  const journals = await getJournal();
+
+  return journals.map((journal) => ({
+    slug: journal.slug,
+  }));
+}
+
 export default async function JournalPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const { slug } = await params;
+  const { slug } = params;
 
   const journals = await getJournal();
-  
-  const index = journals.findIndex(j => j.slug === slug);
+
+  const index = journals.findIndex((j) => j.slug === slug);
   if (index === -1) notFound();
 
   const entry = journals[index];
@@ -21,10 +29,7 @@ export default async function JournalPage({
   return (
     <main className="max-w-3xl mx-auto px-6 py-20 text-text">
       <div className="mb-12 font-anton text-sm md:text-base">
-        <Link
-          href="/"
-          className="hover:underline underline-offset-8 transition"
-        >
+        <Link href="/" className="hover:underline underline-offset-8 transition">
           ← HOME
         </Link>
       </div>
