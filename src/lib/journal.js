@@ -60,7 +60,6 @@ function formatDate(dateString) {
 
 const getJournal = async () => {
     const journalAll = await fetchContent("journal");
-    console.log("journalAll -> ", journalAll);
     const journals = journalAll.map((journal) => {
       const fullContent = journal.data.content
       .map((block) => block.text)
