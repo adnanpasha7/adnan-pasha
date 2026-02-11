@@ -1,20 +1,32 @@
-import * as prismic from '@prismicio/client';
+import * as prismic from "@prismicio/client";
 
-export const client = prismic.createClient("https://adnanpasha.cdn.prismic.io/api/v2");
+export const client = prismic.createClient("adnanpasha");
 
-export const fetchContent = async (type) => {
+export const getAllByType = async (type) => {
   try {
-    const response = await client.get({
-      predicates: [
-        prismic.predicate.at("document.type", type)
-      ],
+    const response = await client.getAllByType(type, {
       orderings: {
         field: "document.first_publication_date",
         direction: "desc",
       },
     });
-    return response.results;
+
+    return response;
   } catch (error) {
-    console.error("Prismic fetch error:", error);
+    console.error(`Prismic fetch error (type: ${type}):`, error);
+    return [];
+  }
+};
+
+export const getBySlug = async (type, slug) => {
+  try {
+    const response = await client.getByUID(type, slug);
+    return response;
+  } catch (error) {
+    console.error(
+      `Prismic fetch error (type: ${type}, slug: ${slug}):`,
+      error
+    );
+    return null;
   }
 };
