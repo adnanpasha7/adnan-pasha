@@ -1,4 +1,4 @@
-name: Deploy to Hostinger (SSH)
+name: Deploy to Hostinger (FTP)
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20.10.0
+          node-version: 20
 
       - name: Install dependencies
         run: npm install
@@ -24,12 +24,14 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy via SSH (rsync)
-        uses: appleboy/scp-action@v0.1.7
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          host: ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 65002
-          source: "out/*"
-          target: "public_html/"
+          port: 21
+          protocol: ftp
+          local-dir: ./out/
+          server-dir: /public_html/
+          dangerous-clean-slate: true
