@@ -22,7 +22,7 @@ export default function Footer() {
             <Link href="/moments" className="hover:underline underline-offset-4">
               moments
             </Link>
-            <Link href="/building" className="hover:underline underline-offset-4">
+            <Link href="/wip" className="hover:underline underline-offset-4">
               building
             </Link>
             <Link href="/hidden" className="text-bg">

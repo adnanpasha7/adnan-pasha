@@ -25,13 +25,13 @@ export default function NavStrip() {
             MOMENTS ◻
           </Link>
           <Link
-            href="/building"
+            href="/wip"
             className="italic text-2xl md:text-3xl hover:-rotate-1 transition"
           >
             BUILDING *
           </Link>
           <Link
-            href="/about"
+            href="/wip"
             className="text-xl tracking-wide underline underline-offset-4"
           >
             ABOUT _
