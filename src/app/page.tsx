@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import JournalLoud from "@/components/journal/JournalLoud";
 import LoudIntro from "@/components/LoudIntro";
 import NavStrip from "@/components/NavStrip";
+import OtherSide from "@/components/OtherSide";
 import WhatIDo from "@/components/WhatIDo";
 
 export default async function Home() {  
@@ -15,6 +16,7 @@ export default async function Home() {
         <WhatIDo />
         <JournalLoud />
         <Elsewhere />
+        <OtherSide />
       </main>
     </>
   );
